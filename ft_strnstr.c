@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 17:14:49 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/08 11:40:45 by wnocchi          ###   ########.fr       */
+/*   Created: 2023/11/08 14:31:04 by wnocchi           #+#    #+#             */
+/*   Updated: 2023/11/08 15:34:03 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (i < n && s1[i] && s2[i] && s1[i] == s2[i])
+	if (little[0] == '\0')
+		return ((char *)(big));
+	while (i < len && big[i])
 	{
+		j = 0;
+		while (big[i + j] == little[j] && big[i + j] != '\0')
+		{
+			j++;
+			if (j == ft_strlen(little))
+				return ((char *)(big) + i);
+		}
 		i++;
 	}
-	if (s1[i] < s2[i])
-		return (-1);
-	if (s1[i] > s2[i])
-		return (1);
-	return (s1[i] - s2[i]);
+	return (0);
 }
-
-/* #include<stdio.h>
 
 int	main(void)
 {
-	const char	*s1 = "1";
-	const char	*s2 = "1";
-
-	printf("%d\n", ft_strncmp(s1, s2, 1));
-} */
+	char	t1[]= "je n'aime pas les pates au pesto";
+	char	t2[]= "les";
+	printf("%s\n", ft_strnstr(t1, t2, 30));
+}

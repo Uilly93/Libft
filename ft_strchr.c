@@ -6,11 +6,11 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:04:38 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/07 14:30:30 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/08 10:34:57 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

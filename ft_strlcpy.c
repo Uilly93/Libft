@@ -6,11 +6,11 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 13:09:49 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/06 16:32:24 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/08 10:34:50 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {

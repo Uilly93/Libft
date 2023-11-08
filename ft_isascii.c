@@ -6,9 +6,11 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:30:33 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/02 10:32:57 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/08 11:42:03 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

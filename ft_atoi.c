@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 17:14:49 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/08 11:40:45 by wnocchi          ###   ########.fr       */
+/*   Created: 2023/11/08 15:35:35 by wnocchi           #+#    #+#             */
+/*   Updated: 2023/11/08 16:20:14 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	size_t	i;
+	int	i;
+	int	sign;
+	int	nb;
 
+	nb = 0;
+	sign = 1;
 	i = 0;
-	while (i < n && s1[i] && s2[i] && s1[i] == s2[i])
+	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '+' || nptr [i] == '-')
 	{
+		if (nptr[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	if (s1[i] < s2[i])
-		return (-1);
-	if (s1[i] > s2[i])
-		return (1);
-	return (s1[i] - s2[i]);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		nb = nb * 10 + nptr[i] - '0';
+		i++;
+	}
+	return (nb * sign);
 }
 
-/* #include<stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
-	const char	*s1 = "1";
-	const char	*s2 = "1";
+	char	*t1 = NULL;
 
-	printf("%d\n", ft_strncmp(s1, s2, 1));
+	printf("%d\n", ft_atoi(t1));
+	printf("%d\n", atoi(t1));
 } */
