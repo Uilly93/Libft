@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:52:42 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/08 16:00:14 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/08 16:31:45 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
 char	*ft_strrchr(const char *s, int c);
-int		ft_toupper(int c);
+int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 

@@ -1,34 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 11:14:18 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/08 17:34:59 by wnocchi          ###   ########.fr       */
+/*   Created: 2023/11/08 16:35:07 by wnocchi           #+#    #+#             */
+/*   Updated: 2023/11/08 16:35:31 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	size_t		i;
-	char		*ptr;
-	const char	*ptr2;
-
-	ptr2 = src;
-	ptr = dest;
-	i = 0;
-	while (i < n)
-	{
-		ptr[i] = ptr2[i];
-		i++;
-	}
-	return (dest);
-}
-/* 
 int	main(void)
 {
 	//char		dest[5];
@@ -42,4 +25,4 @@ int	main(void)
 	printf("%zu\n", ft_strlen(dest2));
 
 	//printf("%s\n", dest);
-} */
+}
