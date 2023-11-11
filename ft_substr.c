@@ -1,39 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 16:27:22 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/09 17:29:47 by wnocchi          ###   ########.fr       */
+/*   Created: 2023/11/09 11:23:48 by wnocchi           #+#    #+#             */
+/*   Updated: 2023/11/09 17:36:45 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*ptr;
+	char	*ptr;
+	size_t	size;
+	size_t	i;
 
-	if ((nmemb | size) >= (size_t) __SIZE_MAX__ / 2)
+	i = 0;
+	if (!s)
 		return (NULL);
-	ptr = malloc(size * nmemb);
-	if (!ptr)
+	size = ft_strlen(s);
+	if (start > size || len > size)
 		return (NULL);
-	ft_bzero(ptr, (nmemb * size));
+	ptr = malloc((len + 1) * sizeof(char));
+	if (ptr == 0)
+		return (NULL);
+	while (i < len && s[start + i] != 0)
+	{
+		ptr[i] = s[start + i];
+		i++;
+	}
+	ptr[i] = '\0';
 	return (ptr);
 }
 
-/* int	main(void)
+/* int main(void)
 {
-	void	*ptr;
-	void	*ptr2;
+	char	ptr[] = "123456789";
+	char	*dest;
 
-	//printf("%s\n", ptr);
-	ptr = ft_calloc(-1, -1);
-	ptr2 = calloc(-5, -5);
-	printf("%p\n", ptr);
-	printf("%p\n", ptr2);
-	free(ptr);
+	dest = ft_substr(ptr, 2, 6);
+	printf("%s\n", dest);
+	free(dest);
 } */
