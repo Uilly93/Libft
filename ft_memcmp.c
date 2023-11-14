@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:47:43 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/11 23:20:55 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/14 14:25:22 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const char	*ptr1;
-	const char	*ptr2;
-	size_t		i;
+	const unsigned char	*ptr1;
+	const unsigned char	*ptr2;
+	size_t				i;
 
 	ptr1 = s1;
 	ptr2 = s2;
 	i = 0;
-	while (i < n && ptr1[i] == ptr2[i])
+	while (i < n)
 	{
+		if (ptr1[i] != ptr2[i])
+			return (ptr1[i] - ptr2[i]);
 		i++;
 	}
-	return (ptr1[i] - ptr2[i]);
+	return (0);
 }
 
 /* int	main(void)
 {
-	const char	*s1 = "0";
-	const char	*s2 = "2";
+	char s2[] = {0, 0, 127, 0};
+	char s3[] = {0, 0, 42, 0};
 
-	printf("%d\n", ft_memcmp(s1, s2, 1));
+	printf("%d\n", ft_memcmp(s2, s3, 4));
 } */

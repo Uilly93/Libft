@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:31:03 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/08 10:34:09 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/14 15:59:01 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,22 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 
 	i = ft_strlen(s);
-	while (i > 0)
+	if (c == 0)
+		return ((char *)(s + i));
+	while (i-- > 0)
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i--;
+		if (s[i] == (unsigned char)c)
+			return ((char *)(s + i));
 	}
-	if (c == '\0')
-		return ((char *)s + i);
 	return (NULL);
 }
 
-/* #include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	const char	s[]= "qwertyuiop";
+// int	main(void)
+// {
+// 	char s[] = "tripouille";
 
-	printf("%s\n", ft_strrchr(s, 'o'));
-	return (0);
-} */
+// 	printf("%s\n", ft_strrchr(s, 'z'));
+// 	return (0);
+// }

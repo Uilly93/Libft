@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:11:44 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/10 15:10:56 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/14 16:38:15 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ static int	ft_skip(char c, char const *charset)
 	}
 	return (0);
 }
-
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

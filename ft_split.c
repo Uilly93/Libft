@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 18:49:24 by uilly             #+#    #+#             */
-/*   Updated: 2023/11/13 16:56:39 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/14 11:58:19 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,28 @@ static int	count_word(const char *str, char c)
 	return (count);
 }
 
+void	ft_free(char **s)
+{
+	size_t	i;
 
-char **ft_split(char const *s, char c)
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char	**ptrs;
 	size_t	i;
 
 	i = 0;
-	ptrs = malloc(sizeof(char *) * count_word(s, c) + 2);
+	if (!s)
+		return (NULL);
+	ptrs = malloc(sizeof(char *) * (count_word(s, c) + 1));
 	if (!ptrs)
 		return (NULL);
 	while (*s)
@@ -72,9 +86,9 @@ char **ft_split(char const *s, char c)
 		if ((*s != c || *s == '\0'))
 		{
 			ptrs[i] = cpy_words(s, c);
-			//printf("%s\n", ptrs[i]);
-			//printf("%zu\n", ft_strlen(ptrs[i]));
-			s += ft_strlen(ptrs[i]);
+			if (ptrs[i] == NULL)
+				ft_free(ptrs);
+			s = s + ft_strlen(ptrs[i] + 1);
 			i++;
 		}
 		s++;
@@ -84,19 +98,20 @@ char **ft_split(char const *s, char c)
 }
 
 
-int main (void)
-{
-	char s1[] = "             123456 2 3 4        55 6666  7777 ";
-	char **ptrs;
-	int i = 0;
-	
-	printf("nombre de mots :%d\n", count_word(s1, ' '));
-	ptrs = ft_split(s1, ' ');
-	while(ptrs[i])
-	{
-		printf("%s\n", ptrs[i]);
-		i++;
-	}
-	// printf("mot copie :%s\n", cpy_words(s1, ' '));
-	//free(ptrs);
-}
+// int main (void)
+// {
+// 	// char s1[] = " 1 ";
+// 	char **ptrs;
+// 	int i = 0;
+
+// 	ptrs = ft_split(NULL , ' ');
+// 	if (!ptrs)
+// 		return (0);
+// 	while (ptrs[i])
+// 	{
+// 		printf("%s\n", ptrs[i]);
+// 		i++;
+// 	}
+// 	ptrs[i] = NULL;
+// 	ft_free(ptrs);
+// }

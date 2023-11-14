@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:27:22 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/09 17:29:47 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/14 13:13:07 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if ((nmemb | size) >= (size_t) __SIZE_MAX__ / 2)
+	if (size != 0 && (nmemb > ULONG_MAX / size))
 		return (NULL);
 	ptr = malloc(size * nmemb);
 	if (!ptr)

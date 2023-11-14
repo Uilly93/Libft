@@ -6,13 +6,13 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:57:38 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/08 11:43:11 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/14 10:47:20 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		c += 32;

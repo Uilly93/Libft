@@ -6,13 +6,13 @@
 #    By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 16:51:19 by wnocchi           #+#    #+#              #
-#    Updated: 2023/11/08 16:57:32 by wnocchi          ###   ########.fr        #
+#    Updated: 2023/11/14 10:48:42 by wnocchi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc
-SRCS = ft_isalpha.c ft_isprint.c ft_memset.c ft_strlcpy.c ft_tolower.c ft_bzero.c ft_isascii.c ft_memcpy.c ft_strchr.c ft_strlen.c ft_toupper.c ft_isalnum.c ft_isdigit.c ft_memmove.c ft_strlcat.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c
+SRCS = ft_isalpha.c ft_isprint.c ft_memset.c ft_strlcpy.c ft_bzero.c ft_isascii.c ft_memcpy.c ft_strchr.c ft_strlen.c ft_toupper.c ft_tolower.c ft_isalnum.c ft_isdigit.c ft_memmove.c ft_strlcat.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c
 OBJS = $(SRCS:.c=.o)
 SRC_TEST = main.c
 NAME_TEST = tests

@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:23:48 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/09 17:36:45 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/14 16:35:24 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	size = ft_strlen(s);
-	if (start > size || len > size)
-		return (NULL);
+	if (start > size)
+		return (ft_strdup(""));
+	if (start + len > size)
+		len = size - start;
 	ptr = malloc((len + 1) * sizeof(char));
-	if (ptr == 0)
+	if (!ptr)
 		return (NULL);
 	while (i < len && s[start + i] != 0)
 	{
@@ -36,12 +38,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (ptr);
 }
 
-/* int main(void)
-{
-	char	ptr[] = "123456789";
-	char	*dest;
+// int main(void)
+// {
+// 	char * s = ft_substr("tripouille", 0, 42000);
 
-	dest = ft_substr(ptr, 2, 6);
-	printf("%s\n", dest);
-	free(dest);
-} */
+// 	dest = ft_substr("Hello world!", 6, 30);
+// 	printf("%s\n", dest);
+// }
