@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 09:09:03 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/08 10:25:18 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/15 17:16:29 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	sizesrc = ft_strlen(src);
 	if (size == 0)
 	{
-		return (sizesrc);
+		return (0);
 	}
 	while (src[i] && (sizedest + i < size - 1))
 	{

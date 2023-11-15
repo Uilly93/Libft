@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:11:44 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/14 16:38:15 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/15 16:57:53 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,31 +28,31 @@ static int	ft_skip(char c, char const *charset)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	size_t	start;
+	size_t	len;
+	size_t	count;
 
-	i = 0;
-	j = ft_strlen(s1) - 1;
-	k = 0;
-	while (s1[i] && ft_skip(s1[i], set) == 1)
-		i++;
-	while (j > 0 && ft_skip(s1[j], set) == 1)
+	start = 0;
+	len = ft_strlen(s1) - 1;
+	count = 0;
+	if (!set)
+		return ((char *)s1);
+	while (s1[start] && ft_skip(s1[start], set) == 1)
+		start++;
+	while (len > 0 && ft_skip(s1[len], set) == 1)
 	{
-		j--;
-		k++;
+		len--;
+		count++;
 	}
-	return (ft_substr(s1, i, ft_strlen(s1) - k - i));
+	if (((ft_strlen(s1)) - count == 0) || (s1[start] == '\0'))
+		return (strdup(""));
+	return (ft_substr(s1, start, (ft_strlen(s1)) - count - start));
 }
 
 // int main(void)
 // {
-// 	char	s1[] = " vb vb vb salut vb bv bvvb ";
-// 	char	set[] = " vb";
-// 	char	*str;
+// 	char *s = ft_strtrim("   xxxtripouille   xxx", " x");
 
-// 	str = ft_strtrim(s1, set);
-// 	printf("%s\n", str);
-// 	free(str);
+// 	printf("%s\n", s);
 // 	return (0);
 // }

@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:23:48 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/14 16:35:24 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/15 17:00:11 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (start + len > size)
 		len = size - start;
-	ptr = malloc((len + 1) * sizeof(char));
+	ptr = ft_calloc((len + 1), sizeof(char));
 	if (!ptr)
 		return (NULL);
 	while (i < len && s[start + i] != 0)
@@ -34,7 +34,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ptr[i] = s[start + i];
 		i++;
 	}
-	ptr[i] = '\0';
 	return (ptr);
 }
 

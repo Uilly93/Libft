@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 18:49:24 by uilly             #+#    #+#             */
-/*   Updated: 2023/11/14 11:58:19 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/15 14:40:51 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ static char	*cpy_words(const char *str, char c)
 	return (ptr);
 }
 
-
 static int	count_word(const char *str, char c)
 {
 	size_t	i;
@@ -46,7 +45,7 @@ static int	count_word(const char *str, char c)
 
 	i = 0;
 	count = 0;
-	while (str[i] == c)
+	while (str[i] == c && str[i])
 		i++;
 	while (str[i])
 	{
@@ -96,7 +95,6 @@ char	**ft_split(char const *s, char c)
 	ptrs[i] = NULL;
 	return (ptrs);
 }
-
 
 // int main (void)
 // {

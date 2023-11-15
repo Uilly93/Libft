@@ -3,3 +3,6 @@ a.out
 *.o
 .vscode
 libftTester/
+libft_tester/
+unit/
+*.so
