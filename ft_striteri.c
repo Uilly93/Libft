@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:58:02 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/15 16:18:52 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:09:52 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int		i;
 
+	if (!s)
+		return ((void)0);
 	i = 0;
 	while (s[i])
 	{

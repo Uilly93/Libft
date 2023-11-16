@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:11:44 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/15 16:57:53 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/16 09:27:13 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	size_t	count;
 
+	if (!s1)
+		return (NULL);
 	start = 0;
 	len = ft_strlen(s1) - 1;
 	count = 0;

@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:14:18 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/08 17:34:59 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/16 11:55:31 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,35 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t		i;
-	char		*ptr;
-	const char	*ptr2;
+	size_t				i;
+	char				*dest2;
+	const unsigned char	*src2;
 
-	ptr2 = src;
-	ptr = dest;
-	i = 0;
-	while (i < n)
+	if (n != 0)
 	{
-		ptr[i] = ptr2[i];
-		i++;
+		src2 = src;
+		dest2 = dest;
+		i = 0;
+		while (i < n)
+		{
+			dest2[i] = src2[i];
+			i++;
+		}
 	}
 	return (dest);
 }
-/* 
-int	main(void)
-{
-	//char		dest[5];
-	//const char	src[5] = "12345";
-	char		dest2[5];
-	const char	src2[5] = "12345";
 
-	//memcpy(dest2, src2, 5);
-	ft_memcpy(dest2, src2, 5);
-	printf("%s\n", dest2);
-	printf("%zu\n", ft_strlen(dest2));
+// int	main(void)
+// {
+// 	//char		dest[5];
+// 	//const char	src[5] = "12345";
+// 	char		dest2[5];
+// 	const char	src2[5] = "12345";
 
-	//printf("%s\n", dest);
-} */
+// 	//memcpy(dest2, src2, 5);
+// 	ft_memcpy(NULL, NULL, 3);
+// 	// printf("%s\n", dest2);
+// 	// printf("%zu\n", ft_strlen(dest2));
+
+// 	//printf("%s\n", dest);
+// }

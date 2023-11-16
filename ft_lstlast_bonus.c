@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 14:47:54 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/16 09:25:22 by wnocchi          ###   ########.fr       */
+/*   Created: 2023/11/16 16:36:39 by wnocchi           #+#    #+#             */
+/*   Updated: 2023/11/16 16:38:19 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstlast(t_list *lst)
 {
+	t_list	*current;
 	int		i;
-	char	*ptr;
 
-	if (!s)
-		return (NULL);
+	if (!lst)
+		return (0);
+	current = lst;
 	i = 0;
-	ptr = ft_calloc(ft_strlen(s) + 1, 1);
-	if (!ptr)
-		return (NULL);
-	while (s[i])
+
+	while (current->next)
 	{
-		ptr[i] = f(i, s[i]);
 		i++;
+		current = current->next;
 	}
-	return (ptr);
+	return (current);
 }
