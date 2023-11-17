@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:12:52 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/16 15:29:19 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/17 11:03:07 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	// if (!*lst || !new)
-	// 	return ((void)NULL);
+	// if (!lst || !*lst || !new)
+	// 	return ;
 	new->next = *lst;
 	*lst = new;
 }
