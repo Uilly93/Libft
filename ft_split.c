@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 18:49:24 by uilly             #+#    #+#             */
-/*   Updated: 2023/11/15 14:40:51 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/20 10:07:57 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	count_word(const char *str, char c)
 	return (count);
 }
 
-void	ft_free(char **s)
+static void	ft_free(char **s)
 {
 	size_t	i;
 
