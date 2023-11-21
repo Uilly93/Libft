@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:14:18 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/16 11:55:31 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/21 10:18:42 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char				*dest2;
 	const unsigned char	*src2;
 
+	if (!dest && !src)
+		return ((void *)0);
 	if (n != 0)
 	{
 		src2 = src;

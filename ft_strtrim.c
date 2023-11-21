@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:11:44 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/16 09:27:13 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/20 16:14:14 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		count++;
 	}
 	if (((ft_strlen(s1)) - count == 0) || (s1[start] == '\0'))
-		return (strdup(""));
+		return (ft_strdup(""));
 	return (ft_substr(s1, start, (ft_strlen(s1)) - count - start));
 }
 

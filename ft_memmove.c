@@ -6,7 +6,7 @@
 /*   By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:07:46 by wnocchi           #+#    #+#             */
-/*   Updated: 2023/11/16 11:55:11 by wnocchi          ###   ########.fr       */
+/*   Updated: 2023/11/21 10:18:15 by wnocchi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	ptr = src;
 	ptr2 = dest;
+	if (!dest && !src)
+		return ((void *)0);
 	if (dest > src)
 	{
 		while (n > 0)

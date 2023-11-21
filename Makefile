@@ -6,7 +6,7 @@
 #    By: wnocchi <wnocchi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 16:51:19 by wnocchi           #+#    #+#              #
-#    Updated: 2023/11/20 11:31:59 by wnocchi          ###   ########.fr        #
+#    Updated: 2023/11/21 10:15:35 by wnocchi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,15 @@ SRCS = ft_isalpha.c ft_isprint.c ft_memset.c ft_strlcpy.c ft_bzero.c ft_isascii.
 SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
-SRC_TEST = main.c
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 all: $(NAME)
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(SRCS_BONUS)
+	cc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_BONUS)
+	
 $(NAME): $(OBJS)
 	ar r $(NAME) $(OBJS)
 
@@ -32,6 +35,6 @@ clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
 	
 fclean: clean
-	$(RM) $(NAME) $(NAME_TEST)
+	$(RM) $(NAME)
 
 re: fclean all

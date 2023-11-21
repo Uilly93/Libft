@@ -2,6 +2,7 @@ a.out
 *.a
 *.o
 .vscode
-libftTester/
-libft_tester/
+trip/
 unit/
+war/
+.gitignore
